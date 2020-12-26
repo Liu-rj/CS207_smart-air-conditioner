@@ -8,9 +8,9 @@
 
 #### 	（一）任务划分
 
-* 刘仁杰：基本框架搭建, 任务划分, 空调初始化, 开机模式状态变更, 温度设定功能, 充电模块, 各模块整合, 代码重构, 系统综合;
-* 朱世博：各状态显示模块、音乐模块、定时关机模块；
-* 张皓淇：充电模块、小键盘、外挂音乐模块、电量充值记录查询模块。
+* 刘仁杰：基本框架搭建, 任务划分, 空调初始化, 开机模式状态变更, 温度设定功能, 充电模块, 各模块整合, 代码重构, 系统综合；(40%)
+* 朱世博：各状态显示模块、音乐模块、定时关机模块；(30%)
+* 张皓淇：充电模块、小键盘、外挂音乐模块、电量充值记录查询模块。(30%)
 
 #### 	（二）进度安排
 
@@ -44,7 +44,7 @@
 
 12.24 6:00 电量充值记录查询模块整合失败
 
-12.24 6:30 完成演示视频的录制 
+12.24 6:30 完成演示视频的录制
 
 ***
 
@@ -87,8 +87,6 @@
 
 > ![结构图](结构图.png)
 
-
-
 #### 	（三）系统执行流程
 ```mermaid
 graph LR
@@ -127,9 +125,9 @@ module view_top(
     
     output reg [7:0] DIG,    //8个 扫描一个
     output reg [7:0] Y,      //输出的内容
-    output [3:0] col,
-    output charge_end,
-    output beep
+    output [3:0] col, // 小键盘的列
+    output charge_end, // 充电结束
+    output beep // 蜂鸣器
     );
 
     wire [1:0] mode; // 模式
@@ -158,19 +156,27 @@ module view_top(
     wire up, down, left, right, middle;
     wire ifon;
     wire shutdown;
-
+	
+    // 按键防抖
     key_vibration vibration(clk, rst, {up_level, down_level, left_level, right_level, middle_level}, {up, down, left, right, middle});
 
+    // 温度显示
     view_temp tempV( on_off, ifon, shutdown, rst, clk, envT, setT, DIG_t ,Y_t );
+    // 电量显示
     view_elec elecV( on_off, rst, clk, elec, DIG_e , Y_e );
+    // 模式显示
     view_mode modeV( on_off, rst, clk, mode, DIG_m , Y_m );
+    // 充电显示
     view_charge chargeV(on_off, ifon, rst, clk, elec, charge, DIG_c, Y_c);
+    // 倒计时显示
     view_time2 timeV(on_off, ifon, shutdown, rst, clk, set_time, count_down, DIG_d, Y_d);
+    // 点亮查询显示
     view_chargehistory history(rst, clk, chargeInfo, DIG_l, Y_l);
 
     // 与controller链接
     controller_top controller(on_off, rst, lookup, clk, row, up, down, left, 	right, middle, ifcharge, select, mode, setT, envT, elec, col, ifon, charge, 	charge_end, set_time, count_down, shutdown, beep, chargeInfo);
 
+    // 模式选择, 开机状态下翻页显示
     always @(posedge clk) begin
         if (left && on_off) begin
             if (select == 3) begin
@@ -190,6 +196,7 @@ module view_top(
         end
     end
 
+    // 关机状态下充电显示和任意时刻电量查询
     always @ (posedge clk) begin
         if (lookup) begin
             Y <= Y_l;
@@ -226,10 +233,9 @@ module view_top(
     end
 
 endmodule
-
 ```
 
-#### 防抖模块
+#### 防抖模块(延时10ms得到稳定电平信号)
 
 ```verilog
 module key_vibration(
@@ -239,7 +245,7 @@ module key_vibration(
 	output reg [4:0] key_en
 	);
 	
-	parameter DURATION = 50_000;                           //延时10ms	
+	parameter DURATION = 50_000;//延时10ms	
 	reg [15:0] cnt; 
 	
 	wire ken_enable;
@@ -273,7 +279,7 @@ module key_vibration(
 endmodule
 ```
 
-#### 二进制-->BCD转换模块
+#### 二进制-->BCD转换模块(采用满5加3算法)
 
 ```verilog
 module Bin_BCD(
@@ -317,13 +323,13 @@ endmodule
 
 ```
 
-#### 时钟分频模块
+#### 时钟分频模块(分频1s时钟)
 
 ```verilog
 module div_frequency(
     input clk,  //Y18
     input rst,  //复位
-    output reg clkout
+    output reg clkout //输出时钟
     );
     parameter period = 100000000;//1s
     reg [31:0] cnt;
@@ -347,8 +353,6 @@ end
 endmodule
 
 ```
-
-
 
 #### 温度显示模块
 
@@ -732,15 +736,13 @@ module view_mode(
 endmodule
 ```
 
-
-
 #### 充电显示模块
 
 ```verilog
 module view_charge(
     input on_off, ifon_elec, rst, clk,
-    input [11:0] elec,
-    input [11:0] charge,
+    input [11:0] elec, // 电量
+    input [11:0] charge, // 充电量
 
     output [7:0] DIG,
     output [7:0] Y
@@ -993,7 +995,7 @@ endmodule
 ```verilog
 module view_chargehistory(
     input rst, clk,
-    input [11:0] chargeInfo,
+    input [11:0] chargeInfo, // 充电信息
 
     output [7:0] DIG,
     output [7:0] Y
@@ -1109,19 +1111,19 @@ module controller_top(
     input up, down, left, right, middle, mid,
     input [1:0] select,
 
-    output [1:0] mode,
-    output [11:0] innertemper,
-    output [11:0] envirtemper,
-    output [11:0] power,
-    output [3:0] col,
-    output ifon,
-    output [11:0] chargevalue, 
+    output [1:0] mode, // 模式
+    output [11:0] innertemper, // 设定温度
+    output [11:0] envirtemper, // 环境温度
+    output [11:0] power, // 电量
+    output [3:0] col, // 小键盘列输出信息
+    output ifon, // 开关状态(电量耗尽)
+    output [11:0] chargevalue, // 充电量
     output input_end, // 充电结束
-    output [11:0] count_time,
-    output [11:0] time_remain,
-    output ifon_count_time,
-    output beep_out,
-    output [11:0] chargeInfo
+    output [11:0] count_time, // 设定关机时间
+    output [11:0] time_remain, // 剩余时间
+    output ifon_count_time, // 是否关机(定时关机)
+    output beep_out, // 蜂鸣器
+    output [11:0] chargeInfo // 点亮查询信息
     );
 
     wire clk;
@@ -1367,7 +1369,7 @@ module kenboard_core(
     input clk, rst,
     input [3:0] row,
     output reg [3:0] col,
-    output [15:0] keys
+    output [15:0] keys // 输出小键盘对应位置信息
     );
 
     parameter NO_SCAN = 4'd0;//表示未扫描的状态
@@ -1482,9 +1484,9 @@ endmodule
 module charge(
     input clkin,
     input rst,charge,//16位numbers依次表示0-9，A,B,C,D,*,#;charge为1表示充值状态,rst复位,charge=1表示进入充电模式
-    input [15:0]numbers,
-    input on_off, ifon_elec,
-    output reg [9:0]electricity,
+    input [15:0]numbers, // 小键盘输入信息
+    input on_off, ifon_elec, // 开关机
+    output reg [9:0]electricity, // 电量
     output input_end//分别表示充电电量和输入是否结束
     );
     reg inend;
@@ -1568,10 +1570,10 @@ endmodule
 module countdown_input(
     input clkin,
     input rst,charge,//16位numbers依次表示0-9，A,B,C,D,*,#;charge为1表示设定倒计时状态,rst复位,charge=1表示进入设定倒计时模式
-    input [15:0]numbers,
-    input on_off, ifon_elec,
-    input [1:0] select,
-    output reg [9:0]electricity,
+    input [15:0]numbers, // 小键盘输入信息
+    input on_off, ifon_elec, // 开关机
+    input [1:0] select, // 选择模式,00为倒计时显示
+    output reg [9:0]electricity, // 电量
     output input_end//分别表示设定倒计时是否结束
     );
     reg inend;
@@ -1657,11 +1659,11 @@ module auto_off_top(
     input on_off,
     input clock_Y18, // Y18
     input rst, // 复位
-    input confirm,
+    input confirm, // 确定输入
     input [9:0] ctime, // 倒计时的时间
     output reg shutdown, // 1开机
     output beep, //输出的音乐
-    output reg [9:0] count_down
+    output reg [9:0] count_down // 十bit输出
     );
 
     reg rst_b;
@@ -2624,32 +2626,75 @@ set_property PACKAGE_PIN P4 [get_ports middle_level]
 
 
 ### 三、测试
-#### 	（一）Testbench文件
+#### （一）Testbench文件
 
-##### 								1. 核心子模块仿真及测试
-1.小键盘模块的调试（采用上板测试的方式）：将小键盘模块的输出绑定至16个LED灯，测试当小键盘的某个按键被按下时，能否输出对应的电平信号，使对应的LED灯亮起。
-2.电量充值记录查询功能的调试（采用上板测试的方式）：将冲入电量的二进制表示绑定至左侧10个LED灯，将查询模块显示电量的二进制表示绑定至右侧10个LED灯，最右侧的LED灯指示电量充值状态。通过两个拨码开关分别可以进入电量充值状态与记录查询状态。在记录查询状态可通过按动左右两个按钮来切换右侧LED灯显示的电量。
+#####  1. 核心子模块仿真及测试
 
+ * 小键盘模块的调试（采用上板测试的方式）：
 
+   将小键盘模块的输出绑定至16个LED灯，测试当小键盘的某个按键被按下时，能否输出对应的电平信号，使对应的LED灯亮起。
 
-#####								2. 联合调试仿真波形
+ * 电量充值记录查询功能的调试（采用上板测试的方式）：
 
-#### 	（二）上板测试结果
+   将冲入电量的二进制表示绑定至左侧10个LED灯，将查询模块显示电量的二进制表示绑定至右侧10个LED灯，最右侧的LED灯指示电量充值状态。通过两个拨码开关分别可以进入电量充值状态与记录查询状态。在记录查询状态可通过按动左右两个按钮来切换右侧LED灯显示的电量。
 
+ * 蜂鸣器模块仿真测试（图中前三个分别为输入，输入和输出，其余的为过程变量）：
+
+![simluation](simulation_buzzer.png)
+
+   说明：内置蜂鸣器采用ROM编码--->解码的方式来输出不同频率（音调）的声音，由于涉及到的子模块较多，且上板测试难以发现问题，故采用仿真的形式，利用vivado逐步查看过程量的状态变化，定位问题接口；仿真中，sclk为输入的时钟信号，srest_n为低电平有效的复位信号，sbeep为输出至蜂鸣器的信号，经过调试，整个beep模块可以将烧入ROM中的信息转化为对应的方波输出；
+
+#### （二）上板测试结果拍照及说明
 
 ***
 
+ * 测试时刻1：
+
+![time1](time1.png)
+
+说明：此时为初始化后的开机状态， 默认显示环境温度和设定温度， 左侧为环境温度， 初始化为24.0℃， 右侧为设定温度， 初始化为25.0℃。
+
+ * 测试时刻2：
+
+![time2](time2.png)
+
+说明：此时为关机充电模式，可以看到控制开关机的拨码开关被置为高电平无效状态，此时七段数码显示管左边显示的是当前剩余电量，此时为已充上电后的剩余电量，右边显示的是本次充电的电量，右下角的LED灯亮起表示我们按了小键盘上的A键，充电已确认，并且电量已充入。本次充电完成后按下C键可以清空充电数据，进行第二次充电操作，当充电量大于99.9 wh时电量不再变化。
+
+ * 测试时刻3：
+
+![time2](time3.png)
+
+说明：此时为设定倒计时关机模块的显示， 左侧为设定倒计时时间， 右侧为当前剩余时间，在确认输入倒计时时间后左侧会清空， 同时右边开始倒计时，倒计时到10s时蜂鸣器开始工作，提示10s内即将关机。
+
 ### 四、总结
+
 #### 	（一）开发过程中遇到的问题及解决方案
-1.在充电模块测试时出现按下任意按键后，小键盘模块会产生对应该按键的多个电平信号，导致充电模块的信息处理错误。通过对小键盘的按键信号输出进行防抖处理，使一次按键仅输出一个有效的电平信号。同时更改充电模块，增强其健壮性。解决了该问题。
 
+##### 问题1：
 
+> 在充电模块测试时出现按下任意按键后，小键盘模块会产生对应该按键的多个电平信号，在高频率时钟信号的驱动下， 充电模块会一次执行多次充电操作， 即按键一次， 充电很多次。
+
+##### 解决方案：
+
+> 通过对小键盘的按键信号输出进行防抖处理，使一次按键输出一个稳定的电平信号。同时更改充电模块，添加一个辅助判定变量(flag)， 将小键盘按键信号的输出响应锁定在一个时钟周期内。即在第一次扫描到小键盘输入时，flag为1，充电模块响应第一个时钟信号上升沿，进行充电，随后将附加判定条件flag设为0，在第二个时钟信号上升沿到来时，由于此时flag为0，即当前信号已经在第一次时钟信号中响应完毕，则不再响应，避免对同一次输入进行多次充电，在当输入结束确认充电时，再将flag置为1，等待下次充电响应。
+
+##### 问题2：
+
+> FPGA芯片板上按键抖动严重，按键一次，由于抖动会在激发状态和无效状态之间往复多次，会造成翻页信息显示混乱。
+
+##### 解决方案：
+
+> 通过对板上按键进行防抖(key_vibration)，使得按键一次得到一个稳定的电平信号，在核心模块处理时敏感于经过防抖后稳定的时钟信号就可以取得较好的效果。
 
 #### 	（二）当前系统特色及优化方向
-1.系统特色
+
+ * 系统特色
     1.七段数码显示管的显示内容可通过左右按键切换，能够直观地显示当前地状态信息。
     2.在开机状态显示模式与显示环境温度和设定温度的模块，可以通过上下按键改变当前模式或设定温度，与真实空调遥控器的设计一致，符合使用者的操作习惯。
+    3.实现了设定关机时间的功能， 可以设定空调在一定时间倒计时后自动关机， 且可以再次开机。
+    4.空调可以监控电量变化，没电时自动关机显示环境温度，并且没电时不能开机，只有充电后才能开机。
 
-2.优化方向
+ * 优化方向
     1.音乐播放采用的是硬编码的方式，虽然能够较好地保留音乐本身的特点，但存在代码冗余程度高，编码新的音乐工作量大的问题。优化方向为编写一个完整的音乐播放模块，从曲谱的输入、每个音节的播放时间与停顿时间等各个方面实现更为简单的音乐编码模式。
-    2.电量充值记录查询模块虽然已经开发完成，但在整合至系统中的过程中出现了一些列问题，导致最终并未在系统中实现该功能。 
+    2.电量充值记录查询模块虽然已经开发完成，但在整合至系统中的过程中出现了一些列问题，导致最终并未在系统中实现该功能。
+    3.可以进一步堆小键盘和按键的防抖进行升级，得到更加稳定的输入信号
