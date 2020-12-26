@@ -1,0 +1,859 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Thu Dec 24 10:33:57 2020
+# Process ID: 1656
+# Current directory: E:/vivado/vivadoProjects/CS207_Project/CS207_Project.runs/synth_1
+# Command line: vivado.exe -log view_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source view_top.tcl
+# Log file: E:/vivado/vivadoProjects/CS207_Project/CS207_Project.runs/synth_1/view_top.vds
+# Journal file: E:/vivado/vivadoProjects/CS207_Project/CS207_Project.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source view_top.tcl -notrace
+Command: synth_design -top view_top -part xc7a100tfgg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 2352 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 332.230 ; gain = 102.359
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'view_top' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_top.v:23]
+INFO: [Synth 8-638] synthesizing module 'key_vibration' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/key_vibration.v:23]
+	Parameter DURATION bound to: 50000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'key_vibration' (1#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/key_vibration.v:23]
+INFO: [Synth 8-638] synthesizing module 'view_temp' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_temp.v:24]
+	Parameter period bound to: 200000 - type: integer 
+WARNING: [Synth 8-567] referenced signal 'ifon_elec' should be on the sensitivity list [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_temp.v:113]
+WARNING: [Synth 8-567] referenced signal 'ifon_time' should be on the sensitivity list [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_temp.v:113]
+INFO: [Synth 8-256] done synthesizing module 'view_temp' (2#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_temp.v:24]
+INFO: [Synth 8-638] synthesizing module 'view_elec' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_elec.v:23]
+	Parameter period bound to: 200000 - type: integer 
+INFO: [Synth 8-226] default block is never used [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_elec.v:125]
+INFO: [Synth 8-256] done synthesizing module 'view_elec' (3#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_elec.v:23]
+INFO: [Synth 8-638] synthesizing module 'view_mode' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_mode.v:23]
+	Parameter period bound to: 200000 - type: integer 
+INFO: [Synth 8-226] default block is never used [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_mode.v:130]
+INFO: [Synth 8-256] done synthesizing module 'view_mode' (4#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_mode.v:23]
+INFO: [Synth 8-638] synthesizing module 'view_charge' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_charge.v:23]
+	Parameter period bound to: 200000 - type: integer 
+WARNING: [Synth 8-567] referenced signal 'charge' should be on the sensitivity list [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_charge.v:78]
+WARNING: [Synth 8-567] referenced signal 'elec' should be on the sensitivity list [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_charge.v:78]
+WARNING: [Synth 8-567] referenced signal 'on_off' should be on the sensitivity list [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_charge.v:111]
+WARNING: [Synth 8-567] referenced signal 'ifon_elec' should be on the sensitivity list [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_charge.v:111]
+INFO: [Synth 8-256] done synthesizing module 'view_charge' (5#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_charge.v:23]
+INFO: [Synth 8-638] synthesizing module 'view_time2' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_time2.v:24]
+	Parameter period bound to: 200000 - type: integer 
+WARNING: [Synth 8-567] referenced signal 'curtime' should be on the sensitivity list [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_time2.v:79]
+WARNING: [Synth 8-567] referenced signal 'settime' should be on the sensitivity list [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_time2.v:79]
+WARNING: [Synth 8-567] referenced signal 'on_off' should be on the sensitivity list [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_time2.v:112]
+WARNING: [Synth 8-567] referenced signal 'ifon_elec' should be on the sensitivity list [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_time2.v:112]
+WARNING: [Synth 8-567] referenced signal 'ifon_time' should be on the sensitivity list [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_time2.v:112]
+INFO: [Synth 8-256] done synthesizing module 'view_time2' (6#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_time2.v:24]
+INFO: [Synth 8-638] synthesizing module 'view_chargehistory' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_chargehistory.v:23]
+	Parameter period bound to: 200000 - type: integer 
+WARNING: [Synth 8-567] referenced signal 'chargeInfo' should be on the sensitivity list [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_chargehistory.v:78]
+INFO: [Synth 8-256] done synthesizing module 'view_chargehistory' (7#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_chargehistory.v:23]
+INFO: [Synth 8-638] synthesizing module 'controller_top' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/controller_top.v:23]
+INFO: [Synth 8-638] synthesizing module 'div_frequency' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/div_frequency.v:23]
+	Parameter period bound to: 100000000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'div_frequency' (8#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/div_frequency.v:23]
+INFO: [Synth 8-638] synthesizing module 'envirtemper_mode' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/envirtemper_mode.v:23]
+INFO: [Synth 8-256] done synthesizing module 'envirtemper_mode' (9#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/envirtemper_mode.v:23]
+INFO: [Synth 8-638] synthesizing module 'coretemper' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/coretemper.v:23]
+INFO: [Synth 8-256] done synthesizing module 'coretemper' (10#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/coretemper.v:23]
+INFO: [Synth 8-638] synthesizing module 'corepower' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/corepower.v:23]
+INFO: [Synth 8-256] done synthesizing module 'corepower' (11#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/corepower.v:23]
+INFO: [Synth 8-638] synthesizing module 'keyboard_core' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/keyboard_core.v:23]
+	Parameter NO_SCAN bound to: 4'b0000 
+	Parameter SCANING bound to: 4'b0001 
+	Parameter UPDATE_DATA bound to: 4'b0010 
+INFO: [Synth 8-638] synthesizing module 'keyboard_map' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/keyboard_map.v:23]
+INFO: [Synth 8-256] done synthesizing module 'keyboard_map' (12#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/keyboard_map.v:23]
+INFO: [Synth 8-638] synthesizing module 'div' [E:/vivado/vivadoProjects/charge_test/div.v:23]
+	Parameter period bound to: 200000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'div' (13#1) [E:/vivado/vivadoProjects/charge_test/div.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/keyboard_core.v:61]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/keyboard_core.v:55]
+INFO: [Synth 8-256] done synthesizing module 'keyboard_core' (14#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/keyboard_core.v:23]
+INFO: [Synth 8-638] synthesizing module 'charge' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/charge.v:23]
+INFO: [Synth 8-256] done synthesizing module 'charge' (15#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/charge.v:23]
+INFO: [Synth 8-638] synthesizing module 'countdown_input' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/countdown_input.v:24]
+INFO: [Synth 8-256] done synthesizing module 'countdown_input' (16#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/countdown_input.v:24]
+INFO: [Synth 8-638] synthesizing module 'auto_off_top' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/auto_off_top.v:23]
+INFO: [Synth 8-638] synthesizing module 'beep' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/beep.v:21]
+INFO: [Synth 8-638] synthesizing module 'div_frequency__parameterized0' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/div_frequency.v:23]
+	Parameter period bound to: 100 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'div_frequency__parameterized0' (16#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/div_frequency.v:23]
+INFO: [Synth 8-638] synthesizing module 'div_frequency__parameterized1' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/div_frequency.v:23]
+	Parameter period bound to: 625000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'div_frequency__parameterized1' (16#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/div_frequency.v:23]
+INFO: [Synth 8-638] synthesizing module 'addr_gen' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/addr_gen.v:23]
+INFO: [Synth 8-256] done synthesizing module 'addr_gen' (17#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/addr_gen.v:23]
+INFO: [Synth 8-638] synthesizing module 'my_rom' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/my_rom.v:23]
+WARNING: [Synth 8-567] referenced signal 'my_memory' should be on the sensitivity list [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/my_rom.v:166]
+INFO: [Synth 8-256] done synthesizing module 'my_rom' (18#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/my_rom.v:23]
+INFO: [Synth 8-638] synthesizing module 'decode' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/decode.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/decode.v:34]
+INFO: [Synth 8-256] done synthesizing module 'decode' (19#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/decode.v:23]
+INFO: [Synth 8-638] synthesizing module 'music_gen' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/music_gen.v:23]
+INFO: [Synth 8-256] done synthesizing module 'music_gen' (20#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/music_gen.v:23]
+INFO: [Synth 8-256] done synthesizing module 'beep' (21#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/beep.v:21]
+INFO: [Synth 8-256] done synthesizing module 'auto_off_top' (22#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/auto_off_top.v:23]
+INFO: [Synth 8-638] synthesizing module 'memory' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/memory.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/memory.v:65]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/memory.v:108]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/memory.v:149]
+INFO: [Synth 8-256] done synthesizing module 'memory' (23#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/memory.v:23]
+INFO: [Synth 8-638] synthesizing module 'Bin_BCD' [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/Bin_BCD.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Bin_BCD' (24#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/Bin_BCD.v:23]
+INFO: [Synth 8-256] done synthesizing module 'controller_top' (25#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/controller_top.v:23]
+INFO: [Synth 8-256] done synthesizing module 'view_top' (26#1) [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/view_top.v:23]
+WARNING: [Synth 8-3331] design view_mode has unconnected port on_off
+WARNING: [Synth 8-3331] design view_elec has unconnected port on_off
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 387.094 ; gain = 157.223
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 387.094 ; gain = 157.223
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tfgg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/constrs_1/new/cons1.xdc]
+Finished Parsing XDC File [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/constrs_1/new/cons1.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/constrs_1/new/cons1.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/view_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/view_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 743.262 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 743.262 ; gain = 513.391
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tfgg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 743.262 ; gain = 513.391
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 743.262 ; gain = 513.391
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "key_en0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "key_en0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clkout" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "dot" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clkout" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "dot" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clkout" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clkout" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "dot" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clkout" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clkout" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "dot" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clkout" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/envirtemper_mode.v:38]
+WARNING: [Synth 8-6014] Unused sequential element temper_reg was removed.  [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/envirtemper_mode.v:31]
+WARNING: [Synth 8-6014] Unused sequential element temper_reg was removed.  [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/coretemper.v:30]
+INFO: [Synth 8-5545] ROM "power" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "power" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "record1second" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "record2second" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "record2second" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "on" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "clkout_r" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-802] inferred FSM for state register 'col_reg' in module 'keyboard_core'
+INFO: [Synth 8-5544] ROM "col" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "data" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "waitbit" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "inend" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "inend" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "inend" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "inend" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clkout" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clkout" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element addr_reg was removed.  [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/addr_gen.v:32]
+INFO: [Synth 8-5546] ROM "music_data" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "count_down" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "rst_b" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE3 |                              000 |                             1111
+*
+                  iSTATE |                              001 |                             0111
+                 iSTATE0 |                              010 |                             1011
+                 iSTATE1 |                              011 |                             1101
+                 iSTATE2 |                              100 |                             1110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'col_reg' using encoding 'sequential' in module 'keyboard_core'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 743.262 ; gain = 513.391
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 14    
+	   2 Input     27 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 4     
+	   2 Input      9 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 3     
+	   2 Input      4 Bit       Adders := 122   
+	   2 Input      3 Bit       Adders := 15    
+	   2 Input      2 Bit       Adders := 4     
++---Registers : 
+	               32 Bit    Registers := 15    
+	               16 Bit    Registers := 3     
+	               11 Bit    Registers := 3     
+	               10 Bit    Registers := 15    
+	                8 Bit    Registers := 2     
+	                7 Bit    Registers := 3     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 5     
+	                3 Bit    Registers := 7     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 23    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 16    
+	   3 Input     32 Bit        Muxes := 3     
+	   2 Input     27 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 3     
+	   5 Input     16 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 1     
+	  23 Input     11 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 2     
+	   2 Input     10 Bit        Muxes := 9     
+	  16 Input      8 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 5     
+	   2 Input      8 Bit        Muxes := 7     
+	   4 Input      8 Bit        Muxes := 2     
+	   8 Input      7 Bit        Muxes := 1     
+	   4 Input      7 Bit        Muxes := 3     
+	   5 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 94    
+	   5 Input      4 Bit        Muxes := 1     
+	  13 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 5     
+	   4 Input      3 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 61    
+	   3 Input      1 Bit        Muxes := 8     
+	   4 Input      1 Bit        Muxes := 5     
+	   5 Input      1 Bit        Muxes := 3     
+	  12 Input      1 Bit        Muxes := 4     
+	  14 Input      1 Bit        Muxes := 2     
+	  23 Input      1 Bit        Muxes := 1     
+	  11 Input      1 Bit        Muxes := 11    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module view_top 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   4 Input      8 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 6     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 1     
+Module key_vibration 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 2     
+	   5 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module view_temp 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	  16 Input      8 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+Module view_elec 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+	   8 Input      7 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module view_mode 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+	   4 Input      7 Bit        Muxes := 3     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module view_charge 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+Module view_time2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module view_chargehistory 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module div_frequency 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module envirtemper_mode 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	                7 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 8     
+Module coretemper 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
++---Registers : 
+	                7 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module corepower 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 3     
++---Registers : 
+	               32 Bit    Registers := 2     
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input     10 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 6     
+	   3 Input      1 Bit        Muxes := 3     
+Module div 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   3 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module keyboard_core 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
++---Muxes : 
+	   5 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   4 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	   4 Input      1 Bit        Muxes := 4     
+	   5 Input      1 Bit        Muxes := 3     
+Module charge 
+Detailed RTL Component Info : 
++---Registers : 
+	               10 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 1     
+	  13 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	  12 Input      1 Bit        Muxes := 2     
+	  14 Input      1 Bit        Muxes := 1     
+Module countdown_input 
+Detailed RTL Component Info : 
++---Registers : 
+	               10 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 1     
+	  13 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	  12 Input      1 Bit        Muxes := 2     
+	  14 Input      1 Bit        Muxes := 1     
+Module div_frequency__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module div_frequency__parameterized1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module addr_gen 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
++---Registers : 
+	                7 Bit    Registers := 1     
+Module decode 
+Detailed RTL Component Info : 
++---Registers : 
+	               11 Bit    Registers := 1     
++---Muxes : 
+	  23 Input     11 Bit        Muxes := 1     
+	  23 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module music_gen 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     11 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+Module auto_off_top 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     27 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     27 Bit        Muxes := 2     
+	   2 Input     10 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 7     
+	   4 Input      1 Bit        Muxes := 1     
+Module memory 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 3     
++---Registers : 
+	               10 Bit    Registers := 11    
+	                4 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 2     
+	  11 Input      1 Bit        Muxes := 11    
+Module Bin_BCD 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 17    
+	   2 Input      3 Bit       Adders := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 12    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clkout" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element temper_reg was removed.  [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/envirtemper_mode.v:31]
+WARNING: [Synth 8-6014] Unused sequential element temper_reg was removed.  [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/coretemper.v:30]
+INFO: [Synth 8-5545] ROM "record2second" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "record1second" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "div_ins/clkout_r" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "div_in/clkout_r" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "inend" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "inend" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "div_in/clkout_r" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "inend" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "inend" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "beep_ring/my_time_1MHz_inst/cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "beep_ring/my_time_1MHz_inst/clkout" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "beep_ring/time_counter_inst/cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "beep_ring/time_counter_inst/clkout" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "beep_ring/decode_inst/music_data" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "count_down" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element beep_ring/addr_gen_inst/addr_reg was removed.  [E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/addr_gen.v:32]
+INFO: [Synth 8-5544] ROM "timeV/" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "vibration/key_en0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "tempV/cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "tempV/clkout" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "tempV/dot" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "elecV/cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "elecV/clkout" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "elecV/dot" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "modeV/cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "modeV/clkout" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "chargeV/cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "chargeV/clkout" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "chargeV/dot" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "timeV/cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "timeV/clkout" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "history/cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "history/clkout" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "history/dot" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (controller/\count_time_to_close/beep_ring/decode_inst/music_data_reg[10] )
+INFO: [Synth 8-3886] merging instance 'controller/readkeyboard/state_reg[2]' (FDCE) to 'controller/readkeyboard/state_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (controller/\readkeyboard/state_reg[3] )
+INFO: [Synth 8-3886] merging instance 'controller/count_time_to_close/num_reg[30]' (FDCE) to 'controller/count_time_to_close/num_reg[27]'
+INFO: [Synth 8-3886] merging instance 'controller/count_time_to_close/num_reg[31]' (FDCE) to 'controller/count_time_to_close/num_reg[27]'
+INFO: [Synth 8-3886] merging instance 'controller/count_time_to_close/num_reg[29]' (FDCE) to 'controller/count_time_to_close/num_reg[27]'
+INFO: [Synth 8-3886] merging instance 'controller/count_time_to_close/num_reg[28]' (FDCE) to 'controller/count_time_to_close/num_reg[27]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (controller/\count_time_to_close/num_reg[27] )
+WARNING: [Synth 8-3332] Sequential element (readkeyboard/state_reg[3]) is unused and will be removed from module controller_top.
+WARNING: [Synth 8-3332] Sequential element (count_time_to_close/num_reg[27]) is unused and will be removed from module controller_top.
+WARNING: [Synth 8-3332] Sequential element (count_time_to_close/beep_ring/decode_inst/music_data_reg[10]) is unused and will be removed from module controller_top.
+WARNING: [Synth 8-3332] Sequential element (count_time_to_close/beep_ring/music_gen_inst/data_reg[10]) is unused and will be removed from module controller_top.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:43 . Memory (MB): peak = 743.262 ; gain = 513.391
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++-------------+-------------------------+---------------+----------------+
+|Module Name  | RTL Object              | Depth x Width | Implemented As | 
++-------------+-------------------------+---------------+----------------+
+|my_rom       | q                       | 128x7         | LUT            | 
+|auto_off_top | beep_ring/my_rom_inst/q | 128x7         | LUT            | 
++-------------+-------------------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:49 ; elapsed = 00:00:52 . Memory (MB): peak = 774.953 ; gain = 545.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:00:53 . Memory (MB): peak = 776.742 ; gain = 546.871
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:50 ; elapsed = 00:00:54 . Memory (MB): peak = 844.164 ; gain = 614.293
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:51 ; elapsed = 00:00:55 . Memory (MB): peak = 844.164 ; gain = 614.293
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:51 ; elapsed = 00:00:55 . Memory (MB): peak = 844.164 ; gain = 614.293
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:52 ; elapsed = 00:00:55 . Memory (MB): peak = 844.164 ; gain = 614.293
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:52 ; elapsed = 00:00:55 . Memory (MB): peak = 844.164 ; gain = 614.293
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:52 ; elapsed = 00:00:55 . Memory (MB): peak = 844.164 ; gain = 614.293
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:52 ; elapsed = 00:00:55 . Memory (MB): peak = 844.164 ; gain = 614.293
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     4|
+|2     |CARRY4 |   153|
+|3     |LUT1   |    33|
+|4     |LUT2   |   242|
+|5     |LUT3   |   110|
+|6     |LUT4   |   154|
+|7     |LUT5   |   479|
+|8     |LUT6   |   305|
+|9     |MUXF7  |    27|
+|10    |FDCE   |   726|
+|11    |FDPE   |    71|
+|12    |FDRE   |    18|
+|13    |IBUF   |    14|
+|14    |OBUF   |    22|
++------+-------+------+
+
+Report Instance Areas: 
++------+--------------------------+------------------------------+------+
+|      |Instance                  |Module                        |Cells |
++------+--------------------------+------------------------------+------+
+|1     |top                       |                              |  2358|
+|2     |  chargeV                 |view_charge                   |    99|
+|3     |  controller              |controller_top                |  1630|
+|4     |    count_time_to_close   |auto_off_top                  |   426|
+|5     |      beep_ring           |beep                          |   269|
+|6     |        addr_gen_inst     |addr_gen                      |    25|
+|7     |        decode_inst       |decode                        |    21|
+|8     |        music_gen_inst    |music_gen                     |    53|
+|9     |        my_rom_inst       |my_rom                        |     5|
+|10    |        my_time_1MHz_inst |div_frequency__parameterized0 |    83|
+|11    |        time_counter_inst |div_frequency__parameterized1 |    82|
+|12    |    givetime              |countdown_input               |   160|
+|13    |      div_in              |div_1                         |    84|
+|14    |    memory_inst           |memory                        |   216|
+|15    |    modecharge            |charge                        |   165|
+|16    |      div_in              |div_0                         |    84|
+|17    |    modeclk               |div_frequency                 |    82|
+|18    |    readkeyboard          |keyboard_core                 |   180|
+|19    |      div_ins             |div                           |    84|
+|20    |    setenvirtemper        |envirtemper_mode              |    74|
+|21    |    setpower              |corepower                     |   290|
+|22    |    settemper             |coretemper                    |    37|
+|23    |  elecV                   |view_elec                     |   103|
+|24    |  history                 |view_chargehistory            |    99|
+|25    |  modeV                   |view_mode                     |   105|
+|26    |  tempV                   |view_temp                     |   102|
+|27    |  timeV                   |view_time2                    |   103|
+|28    |  vibration               |key_vibration                 |    58|
++------+--------------------------+------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:52 ; elapsed = 00:00:55 . Memory (MB): peak = 844.164 ; gain = 614.293
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 10 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:37 ; elapsed = 00:00:48 . Memory (MB): peak = 844.164 ; gain = 258.125
+Synthesis Optimization Complete : Time (s): cpu = 00:00:52 ; elapsed = 00:00:55 . Memory (MB): peak = 844.164 ; gain = 614.293
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 194 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+168 Infos, 25 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:55 ; elapsed = 00:00:59 . Memory (MB): peak = 844.164 ; gain = 618.574
+INFO: [Common 17-1381] The checkpoint 'E:/vivado/vivadoProjects/CS207_Project/CS207_Project.runs/synth_1/view_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file view_top_utilization_synth.rpt -pb view_top_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.085 . Memory (MB): peak = 844.164 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 24 10:35:01 2020...

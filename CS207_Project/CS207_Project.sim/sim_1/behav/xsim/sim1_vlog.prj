@@ -1,0 +1,14 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../CS207_Project.srcs/sources_1/new/clock.v" \
+"../../../../CS207_Project.srcs/sources_1/new/coremode.v" \
+"../../../../CS207_Project.srcs/sources_1/new/corepower.v" \
+"../../../../CS207_Project.srcs/sources_1/new/coretemper.v" \
+"../../../../CS207_Project.srcs/sources_1/new/start.v" \
+"../../../../CS207_Project.srcs/sim_1/new/sim1.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

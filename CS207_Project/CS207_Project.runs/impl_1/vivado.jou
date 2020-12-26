@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Thu Dec 24 10:35:08 2020
+# Process ID: 8580
+# Current directory: E:/vivado/vivadoProjects/CS207_Project/CS207_Project.runs/impl_1
+# Command line: vivado.exe -log view_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source view_top.tcl -notrace
+# Log file: E:/vivado/vivadoProjects/CS207_Project/CS207_Project.runs/impl_1/view_top.vdi
+# Journal file: E:/vivado/vivadoProjects/CS207_Project/CS207_Project.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source view_top.tcl -notrace

@@ -1,0 +1,18 @@
+0.6
+2017.4
+Dec 15 2017
+21:07:18
+E:/vivado/vivadoProjects/CS207_Project/CS207_Project.sim/sim_1/behav/xsim/glbl.v,1513215259,verilog,,,,glbl,,,,,,,,
+E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sim_1/new/sim1.v,1608035946,verilog,,,,sim1,,,,,,,,
+E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sim_1/new/simclk.v,1608382742,verilog,,,,simclk,,,,,,,,
+E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sim_1/new/tb_controller_top.v,1608280145,verilog,,,,tb_controller_top,,,,,,,,
+E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/Bin_BCD.v,1608381819,verilog,,E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/charge.v,,Bin_BCD,,,,,,,,
+E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/charge.v,1608449939,verilog,,E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/clock.v,,charge,,,,,,,,
+E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/clock.v,1608381808,verilog,,E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/controller_top.v,,clock,,,,,,,,
+E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/controller_top.v,1608278043,verilog,,E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/corepower.v,,controller_top,,,,,,,,
+E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/corepower.v,1608270691,verilog,,E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/coretemper.v,,corepower,,,,,,,,
+E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/coretemper.v,1608270882,verilog,,E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/envirtemper_mode.v,,coretemper,,,,,,,,
+E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/envirtemper_mode.v,1608280790,verilog,,E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/kenboard_core.v,,envirtemper_mode,,,,,,,,
+,,,,E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/keyboard_map.v,,kenboard_core,,,,,,,,
+,,,,E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/shutdown.v,,keyboard_map,,,,,,,,
+E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sources_1/new/shutdown.v,1608213869,verilog,,E:/vivado/vivadoProjects/CS207_Project/CS207_Project.srcs/sim_1/new/tb_controller_top.v,,shutdown,,,,,,,,

@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../CS207_Project.srcs/sources_1/new/envir_temper.v" \
+"../../../../CS207_Project.srcs/sim_1/new/simtemper.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
