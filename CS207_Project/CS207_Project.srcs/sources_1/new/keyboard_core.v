@@ -21,88 +21,81 @@
 
 
 module keyboard_core(
-    input clkin, rst,
+    input clk, rst,
     input [3:0] row,
     output reg [3:0] col,
     output [15:0] keys
     );
 
-    parameter NO_SCAN = 4'd0;
-    parameter SCANING = 4'd1;
-    parameter UPDATE_DATA = 4'd2;
+    parameter NO_SCAN = 4'd0;//表示未扫描的状态
+    parameter SCANING = 4'd1;//表示扫描的状态
 
     reg [3:0] state;
 
     reg[15:0] data;
-    reg[15:0] data_out;
+    wire [15:0] data_out;
 
-    reg[2:0] waitbit; // make button wait some clock to read data
+    reg[2:0] count; // 当按键在数个时钟周期中都处于按下的状态，则认为这是一次有效的输入
 
-    keyboard_map keyboard_map_inst(data_out, keys);
+    keyboard_map key_mapping_inst(data_out, keys);//将生成的行列坐标信号映射成输出所需要的信号
 
-    wire clk;
-    div div_ins(clkin, rst, clk);
+    assign data_out=data;
 
-    always @(posedge clk, negedge rst) begin
-        if (~rst) begin
+    always @(posedge clk) begin
+        if (rst) begin//复位
             col <= 4'b1111;
             state <= NO_SCAN;
             data <= 16'hFFFF;
-            data_out <= 16'hFFFF;
-            waitbit <= 0;
+            count <= 0;
         end
         else begin
             case (state)
-                NO_SCAN: begin
+                NO_SCAN: begin//若处于未扫描的状态，则进入扫描状态，开始扫描col0
                     state <= SCANING;
-                    col <= 4'b0111;
+                    col <= 4'b1110;
                 end
                 SCANING: begin
                     case(col)
-                        4'b0111: begin
-                            if(waitbit == 7) begin
+
+                        4'b1110: begin//扫描col0
+                            if(count == 7) begin
+                                data[3:0] <= row;
+                                col <= 4'b0111;
+                                count <= 0;
+                            end
+                            else count <= count + 1;
+
+                        end
+
+                        4'b0111: begin//扫描col3
+                            if(count == 7) begin
                                 data[15:12] <= row;
                                 col <= 4'b1011;
-                                waitbit <= 0;
+                                count <= 0;
                             end
-                            else waitbit <= waitbit + 1;
+                            else count <= count + 1;
                         end
-                        4'b1011: begin
-                            if(waitbit == 7) begin
+
+                        4'b1011: begin//扫描col2
+                            if(count == 7) begin
                                 data[11:8] <= row;
                                 col <= 4'b1101;
-                                waitbit <= 0;
+                                count <= 0;
                             end
-                            else waitbit <= waitbit + 1;
+                            else count <= count + 1;
                         end
-                        4'b1101: begin
-                            if(waitbit == 7) begin
+                        
+                        4'b1101: begin//扫描col1
+                            if(count == 7) begin
                                 data[7:4] <= row;
                                 col <= 4'b1110;
-                                waitbit <= 0;
+                                count <= 0;
                             end
-                            else waitbit <= waitbit + 1;
+                            else count <= count + 1;
                         end
-                        4'b1110: begin
-                            if(waitbit == 7) begin
-                                data[3:0] <= row;
-                                col <= 4'b1111;
-                                waitbit <= 0;
-                                state <= UPDATE_DATA;
-                            end
-                            else waitbit <= waitbit + 1;
 
-                        end
                     endcase
 
-                end
-                UPDATE_DATA: begin
-                    if(waitbit == 7) begin
-                        state <= NO_SCAN;
-                        data_out <= data;
-                        waitbit <= 0;
-                    end
-                    else waitbit <= waitbit + 1;
                 end
 
             endcase
