@@ -1,0 +1,1 @@
+-wto "ad301cc019d548ee9df55287991134d2" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "kenboard_core_behav" "xil_defaultlib.kenboard_core" "xil_defaultlib.glbl" -log "elaborate.log" 

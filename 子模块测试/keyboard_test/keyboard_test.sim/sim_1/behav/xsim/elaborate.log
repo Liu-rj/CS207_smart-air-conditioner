@@ -1,0 +1,13 @@
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto ad301cc019d548ee9df55287991134d2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot kenboard_core_behav xil_defaultlib.kenboard_core xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.keyboard_map
+Compiling module xil_defaultlib.kenboard_core
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot kenboard_core_behav

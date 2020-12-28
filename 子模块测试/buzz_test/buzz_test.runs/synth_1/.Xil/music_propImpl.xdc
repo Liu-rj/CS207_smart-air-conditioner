@@ -1,0 +1,7 @@
+set_property SRC_FILE_INFO {cfile:D:/DigitalDesign/buzz_test/buzz_test.srcs/constrs_1/new/buzz_test_cons.xdc rfile:../../../buzz_test.srcs/constrs_1/new/buzz_test_cons.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:1 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN W4 [get_ports on]
+set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN Y18 [get_ports clk]
+set_property src_info {type:XDC file:1 line:8 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN A19 [get_ports signal]
